@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"/>
+                //android:background="@mipmap/fondo_triangulo" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:gravity="right"
+                android:text="Cateto c:   "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/edtxtC"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/textView"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number|numberDecimal" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView"
+                android:orientation="vertical"></LinearLayout>
+
+            <EditText
+                android:id="@+id/edtxtB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout"
+                android:layout_alignEnd="@+id/edtxtC"
+                android:layout_toEndOf="@+id/textView"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number|numberDecimal" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/edtxtB"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/edtxtB"
+                android:layout_toStartOf="@+id/edtxtB"
+                android:gravity="right"
+                android:text="Cateto b:   "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView2"
+                android:orientation="vertical" />
+
+            <Button
+                android:id="@+id/btnCalcular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/edtxtB"
+                android:layout_below="@+id/linearLayout2"
+                android:layout_toEndOf="@+id/textView2"
+                android:background="#3F51B5"
+                android:text="CALCULAR"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/txtResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/btnCalcular"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/btnCalcular"
+                android:gravity="center"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/btnCalcular"
+                android:layout_below="@+id/linearLayout2"
+                android:layout_toStartOf="@+id/btnCalcular"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Button
+                android:id="@+id/btnLimpiar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/txtResultado"
+                android:layout_toStartOf="@+id/textView3"
+                android:background="#3F51B5"
+                android:text="LIMPIAR"
+                android:textColor="#FFFFFF"
+                android:textSize="17dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
