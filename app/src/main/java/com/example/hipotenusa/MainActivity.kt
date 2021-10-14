@@ -10,8 +10,9 @@ import android.view.View
 import android.widget.Button
 
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_main.*
+//import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.*
+import kotlinx.parcelize.Parcelize
 import android.widget.EditText
 import java.text.DecimalFormat
 
@@ -80,8 +81,9 @@ class MainActivity : AppCompatActivity() {
                         ), 0.5
                     )
                     respuesta = formato.format(r).toString()
+
                     if (r % 1.0 == 0.0) {
-                        respuesta = r as Int.toString()
+                        respuesta =  r.toString()
                     }
                     resultado!!.text = "La hipotenusa 'a' es:  $respuesta"
                     limpiar!!.isEnabled = true
