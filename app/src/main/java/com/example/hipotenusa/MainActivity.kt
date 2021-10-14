@@ -8,16 +8,13 @@ import android.R
 import android.app.AlertDialog
 import android.view.View
 import android.widget.Button
-
 import android.widget.TextView
-//import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.*
-import kotlinx.parcelize.Parcelize
 import android.widget.EditText
 import java.text.DecimalFormat
 
-
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
     var calcular: Button? = null
     var limpiar: Button? = null
     var teC: EditText? = null
@@ -32,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        
+
         calcular = findViewById<View>(R.id.btnCalcular) as Button
         limpiar = findViewById<View>(R.id.btnLimpiar) as Button
         teC = findViewById<View>(R.id.edtxtC) as EditText
@@ -40,11 +37,11 @@ class MainActivity : AppCompatActivity() {
         resultado = findViewById<View>(R.id.txtResultado) as TextView
         limpiar!!.isEnabled = false
         calcular!!.setOnClickListener {
+
             cateto_b = teB!!.text.toString()
             cateto_c = teC!!.text.toString()
 
             if (cateto_c!!.length == 0) { //Verificar si no hay nada escrito
-                
                 dialog = AlertDialog.Builder(this@MainActivity)
                 dialog!!.setTitle("Error")
                 dialog!!.setMessage("Ingresar el valor del cateto menor 'c'")
@@ -56,7 +53,6 @@ class MainActivity : AppCompatActivity() {
                     teC!!.requestFocus()
                 }
                 dialog!!.show()
-                
             } else {
                 if (cateto_b!!.length == 0) { //Verificar si no hay nada escrito
                     dialog = AlertDialog.Builder(this@MainActivity)
@@ -71,7 +67,6 @@ class MainActivity : AppCompatActivity() {
                     }
                     dialog!!.show()
                 } else {
-                    
                     val c = cateto_c!!.toDouble()
                     val b = cateto_b!!.toDouble()
                     val r = Math.pow(
@@ -81,9 +76,8 @@ class MainActivity : AppCompatActivity() {
                         ), 0.5
                     )
                     respuesta = formato.format(r).toString()
-
                     if (r % 1.0 == 0.0) {
-                        respuesta =  r.toString()
+                        respuesta = r.toString()
                     }
                     resultado!!.text = "La hipotenusa 'a' es:  $respuesta"
                     limpiar!!.isEnabled = true
